@@ -1,0 +1,30 @@
+version: '3'
+services:
+  init:
+    image: alpine
+    command:
+      - /bin/sh
+      - -c
+      - |
+        chown -R 1000:1000 /data
+        echo "done grany data directory permission"
+    volumes:
+      - /mnt/blockstore/arbitrum:/data
+  arbitrum:
+    image: offchainlabs/nitro-node:v2.0.12-alpha.7-5834021
+    container_name: arbitrum
+    restart: always
+    ports:
+      - "8557:8547"
+      - "8558:8548"
+    volumes:
+      - /mnt/blockstore/arbitrum:/home/user/.arbitrum
+    command: >
+      --l1.url https://mainnet.infura.io/v3/61f9c3d7bd3341fc9ed958748eeeb7b0
+      --l2.chain-id=42161
+      --http.api=net,web3,eth,debug
+      --http.corsdomain=*
+      --http.addr=0.0.0.0
+      --http.vhosts=*
+      --ws.port=8545
+      --init.url="https://snapshot.arbitrum.io/mainnet/nitro.tar"
