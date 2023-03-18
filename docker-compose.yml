@@ -27,4 +27,3 @@ services:
       --http.addr=0.0.0.0
       --http.vhosts=*
       --ws.port=8545
-      --init.import-file="/home/user/.arbitrum/nitro.tar"
