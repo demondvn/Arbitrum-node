@@ -20,7 +20,7 @@ services:
     volumes:
       - /mnt/blockstore/arbitrum:/home/user/.arbitrum
     command: >
-      --l1.url https://mainnet.infura.io/v3/61f9c3d7bd3341fc9ed958748eeeb7b0
+      --l1.url https://mainnet.infura.io/v3/asxas
       --l2.chain-id=42161
       --http.api=net,web3,eth,debug
       --http.corsdomain=*
