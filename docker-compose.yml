@@ -11,7 +11,7 @@ services:
     volumes:
       - /mnt/blockstore/arbitrum:/data
   arbitrum:
-    image: offchainlabs/nitro-node:v2.0.12-alpha.7-5834021
+    image: offchainlabs/nitro-node:v2.0.11-8e786ec
     container_name: arbitrum
     restart: always
     ports:
@@ -27,3 +27,4 @@ services:
       --http.addr=0.0.0.0
       --http.vhosts=*
       --ws.port=8545
+      --init.import-file=/home/user/.arbitrum/nitro.tar
