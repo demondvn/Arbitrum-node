@@ -17,14 +17,21 @@ services:
     ports:
       - "8557:8547"
       - "8558:8548"
+      - "8555:8545"
     volumes:
       - /mnt/blockstore/arbitrum:/home/user/.arbitrum
     command: >
-      --l1.url https://mainnet.infura.io/v3/asxas
+      --l1.url=https://rpc.ankr.com/eth/<api>
       --l2.chain-id=42161
       --http.api=net,web3,eth,debug
       --http.corsdomain=*
       --http.addr=0.0.0.0
       --http.vhosts=*
-      --ws.port=8545
+      --ws.addr=0.0.0.0
+      --ws.origins=*
+      --ws.port=8548
+      --node.rpc.gas-cap=0
+      --node.rpc.tx-fee-cap=0
+      --node.rpc.evm-timeout=60s
       --init.empty
+      --ipc.path=/home/user/.arbitrum/
