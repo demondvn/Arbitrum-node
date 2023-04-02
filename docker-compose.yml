@@ -33,5 +33,5 @@ services:
       --node.rpc.gas-cap=0
       --node.rpc.tx-fee-cap=0
       --node.rpc.evm-timeout=60s
-      --init.url="file:///data/nitro.tar"
+      --init.url="file:///home/user/.arbitrum/nitro.tar"
       --ipc.path=/home/user/.arbitrum/
